@@ -1,0 +1,58 @@
+nav {
+    background-color: black;
+    color: white;
+}
+
+#logo {
+    height: 80px;
+    width: 160px;
+    position: left;
+    margin-left: 20px;
+}
+
+.header_content-social-media {
+    text-align: center;
+
+}
+img{
+    margin: 7px;
+   
+}
+.content{
+  margin:0;
+}
+.theme-options{
+    max-width: 100px;
+    margin: 0 auto;
+    text-align: right;
+    padding: 5px 0;
+  }
+  .theme-options div{
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    margin: 2px 10px;
+    border: 1px solid #fff;
+    display: inline-block;
+    
+  }
+  .theme-white > {
+    background-color: #eee;
+
+  }
+  .theme-blue{
+    background-color: #1e41c1;
+  }
+  .theme-orange{
+    background-color: orange;
+  }
+  .theme-purple{
+    background-color: purple;
+  }
+  .theme-green{
+    background-color: green;
+  }
+  .theme-black{
+    background-color: rgba(0, 0, 0, 0.836);
+  }

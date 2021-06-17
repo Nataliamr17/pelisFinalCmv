@@ -1,0 +1,7 @@
+<app-header></app-header>
+
+<app-filtro (onSearchByAnno)="onSearchByAnno($event)"></app-filtro>
+<div class="container justify-content-around">
+    <app-cards *ngFor="let element of filterElements" [element]="element" class="col-4"></app-cards>
+</div> 
+<app-footer></app-footer>

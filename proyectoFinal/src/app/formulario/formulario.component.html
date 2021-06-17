@@ -1,0 +1,22 @@
+<div class="container">
+    <form action="">
+        <h3>Formulario</h3>
+		<label>Nombre</label>
+		<input type="text" formControlName="nombre" class="form-control" [ngClass]="{ 'is-invalid':  form.nombre.errors }" />
+		<div *ngIf="form.name.errors" class="invalid-feedback">
+			<div *ngIf="form.name.errors.required">El nombre es obligatorio</div>
+		</div>
+
+        <div class="text-center">
+            <button class="btn btn-primary mr-1" [disabled]="form.invalid">Enviar</button>
+            <button class="btn btn-secondary">Cancelar</button>
+        </div>
+        <label>Email</label>
+		<input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': form.email.errors }" />
+		<div *ngIf="form.email.errors" class="invalid-feedback">
+			<div *ngIf="form.email.errors.required">El email es obligatorio</div>
+			<div *ngIf="form.email.errors.email">El email debe de ser válido</div>
+		</div>
+
+    </form>
+</div>
