@@ -1,6 +1,9 @@
 <div class="wrap">
     <input type="number" [(ngModel)]="value" class="searchTerm" placeholder="Buscar por año...">
     <button class="boton" (click)="onSearch()">Buscar por año...</button>
+
+    <input type="string" [(ngModel)]="value" class="searchTerm" placeholder="Buscar por titulo...">
+    <button class="boton" (click)="onSearchT()">Buscar por título...</button>
     <button class="boton" (click)="onReset()">Eliminar filtro</button>
     <!-- <button class="btn btn-danger" (click)="rojo()">Interfaz Roja</button>
     <button class="btn btn-warning" (click)="amarillo()">Interfaz Amarilla</button> -->

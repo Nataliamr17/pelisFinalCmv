@@ -9,6 +9,7 @@ export class FiltroComponent implements OnInit {
   // storedTheme: any = localStorage.getItem('theme-color');
 
   @Output() onSearchByAnno = new EventEmitter<any>();
+  @Output() onSearchByTitle = new EventEmitter<any>();
 
   value: number | undefined;
 
@@ -24,6 +25,9 @@ export class FiltroComponent implements OnInit {
   onReset() {
     this.value = undefined;
     this.onSearchByAnno.emit(this.value);
+  }
+  onSearchT() {
+    this.onSearchByTitle.emit(this.value);
   }
   
   

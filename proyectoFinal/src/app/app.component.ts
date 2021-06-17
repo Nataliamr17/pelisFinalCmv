@@ -31,6 +31,14 @@ export class AppComponent implements OnInit {
     }
   }
 
+  onSearchByTitle(nombre: string){
+    if( nombre!== undefined){
+      this.filterElements = this.elements.filter( x => x.nombre.includes(nombre));
+    }else {
+      this.filterElements = this.elements;
+    }
+  }
+
   parseXML(elements: any[], data: any) {
     return new Promise(resolve => {
       var k: string | number,
