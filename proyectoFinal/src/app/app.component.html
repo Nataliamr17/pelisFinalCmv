@@ -1,7 +1,10 @@
+<!-- <div [ngClass]="{'dia': flag, 'noche': !flag}">  -->
 <app-header ></app-header>
 
 <app-filtro (onSearchByAnno)="onSearchByAnno($event)" (onSearchByTitle)="onSearchByTitle($event)"></app-filtro>
+<!-- <button onclick="cambia()">Día / Noche</button> -->
 <div class="container justify-content-around">
+    
     <app-cards *ngFor="let element of filterElements" [element]="element" class="col-4"></app-cards>
 </div> 
 <app-footer></app-footer>

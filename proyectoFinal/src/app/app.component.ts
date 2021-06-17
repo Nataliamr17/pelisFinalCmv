@@ -39,6 +39,7 @@ export class AppComponent implements OnInit {
     }
   }
 
+
   parseXML(elements: any[], data: any) {
     return new Promise(resolve => {
       var k: string | number,
