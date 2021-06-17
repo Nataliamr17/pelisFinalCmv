@@ -6,14 +6,21 @@ button {
   background-color: rgba(0, 0, 0, 0.836);
   color: white;
   border-radius: 5px;
-  margin-left: 10px;
+  margin: 10px 10px 10px 10px;
+
 }
 
 .dia {
-  color: black;
-  background-color: #CDEDF6;
+  color: rgba(33,36,41,255);
+  background-color: #fff;
+
  }
 .noche {
-  color: white;
-  background-color: #202124;
+  color: #fff;
+  background-color: rgba(33,36,41,255);
  }
+ .noche button{
+   background-color: #fff;
+   color: rgba(33,36,41,255);
+ }
+ 

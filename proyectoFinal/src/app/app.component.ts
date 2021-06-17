@@ -12,6 +12,7 @@ export class AppComponent implements OnInit {
 
   private elements: any[] = [];
   public filterElements: any[] = [];
+  flag: boolean = true;
 
   constructor(private cargaScriptsService: CargaScriptsService)   {}
 
@@ -21,6 +22,9 @@ export class AppComponent implements OnInit {
       this.parseXML(this.elements, data);
       this.filterElements = this.elements;
     });
+  }
+  cambia(){
+    this.flag = !this.flag;
   }
 
   onSearchByAnno(anno: number) {
