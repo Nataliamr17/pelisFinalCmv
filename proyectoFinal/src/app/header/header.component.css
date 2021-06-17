@@ -56,3 +56,8 @@ img{
   .theme-black{
     background-color: rgba(0, 0, 0, 0.836);
   }
+  @media screen and (max-width: 600px) {
+    .search-submit{
+        display: none;
+    }
+}
