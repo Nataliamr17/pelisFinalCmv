@@ -11,18 +11,15 @@ export class FormularioComponent implements OnInit {
   form: FormGroup;
   submitted = false;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder) { 
 
-  ngOnInit(): void {
-    this.form = this.formBuilder.group({
-      nombre: ["", Validators.required],
+  this.form = this.formBuilder.group({
+      nombre: ["", [Validators.required, Validators.minLength(3)]],
       email: ["", [Validators.required, Validators.email]],
       mensaje: ["", [Validators.required, Validators.minLength(10)]]
-    }
-
-    )
-  }
-
+  })
+  
+ }    
   getForm(){
     return this.form.controls;
   }
@@ -33,11 +30,16 @@ export class FormularioComponent implements OnInit {
       return;
     }
     alert("Mensaje enviado");
+    this.form.reset();
   }
   
   onReset(){
     this.submitted = false;
     this.form.reset();
+  }
+  
+  ngOnInit(){
+        
   }
 
 }

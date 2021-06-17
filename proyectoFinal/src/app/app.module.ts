@@ -9,6 +9,13 @@ import { FiltroComponent } from './filtro/filtro.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormularioComponent } from './formulario/formulario.component';
+import { Routes, RouterModule } from '@angular/router';
+
+
+const appRoutes: Routes = [
+  { path: 'formulario', component: FormularioComponent},
+  
+];
 
 @NgModule({
   declarations: [
@@ -17,13 +24,15 @@ import { FormularioComponent } from './formulario/formulario.component';
     FooterComponent,
     CardsComponent,
     FiltroComponent,
-    FormularioComponent
+    FormularioComponent,
+
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]

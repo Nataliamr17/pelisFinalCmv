@@ -1,22 +1,71 @@
-<div class="container">
-    <form action="">
-        <h3>Formulario</h3>
-		<label>Nombre</label>
-		<input type="text" formControlName="nombre" class="form-control" [ngClass]="{ 'is-invalid':  form.nombre.errors }" />
-		<div *ngIf="form.name.errors" class="invalid-feedback">
-			<div *ngIf="form.name.errors.required">El nombre es obligatorio</div>
-		</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Formulario de contacto</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
 
-        <div class="text-center">
-            <button class="btn btn-primary mr-1" [disabled]="form.invalid">Enviar</button>
-            <button class="btn btn-secondary">Cancelar</button>
-        </div>
-        <label>Email</label>
-		<input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': form.email.errors }" />
-		<div *ngIf="form.email.errors" class="invalid-feedback">
-			<div *ngIf="form.email.errors.required">El email es obligatorio</div>
-			<div *ngIf="form.email.errors.email">El email debe de ser válido</div>
-		</div>
+				<div class="container" id="form">
+					<form action="" [formGroup]="form" (ngSubmit)="onSubmit()">
+						<div class="form-group">
+							<label>Nombre</label>
+							<input type="text" formControlName="nombre" class="form-control"
+								[ngClass]="{ 'is-invalid': form.controls.nombre.errors}" />
+							<div *ngIf="form.controls.nombre.errors && (form.controls.nombre.touched ||form.controls.nombre.dirty)"
+								class="invalid-feedback">
+								<div *ngIf="form.controls.nombre.errors.required" class="alert alert-danger">El nombre
+									es obligatorio</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label>Email</label>
 
-    </form>
+							<input type="text" formControlName="email" class="form-control"
+								[ngClass]="{ 'is-invalid': form.controls.email.errors }" />
+							<div *ngIf="form.controls.email.errors" class="invalid-feedback">
+								<div *ngIf="form.controls.email.errors.required">El email es obligatorio</div>
+								<div *ngIf="form.controls.email.errors.email" class="alert alert-danger">El email no es
+									válido</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label>Mensaje</label>
+							<textarea formControlName="mensaje" class="form-control"
+								[ngClass]="{ 'is-invalid': form.controls.mensaje.errors}" cols="30"
+								rows="10"></textarea>
+							<div *ngIf="form.controls.mensaje.errors && (form.controls.mensaje.touched ||form.controls.mensaje.dirty)"
+								class="invalid-feedback">
+								<div *ngIf="form.controls.mensaje.errors.required" class="alert alert-danger">El mensaje
+									es obligatorio</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-primary mr-1" [disabled]="form.invalid" (click)="onSubmit()">Enviar</button>
+				<button class="btn btn-secondary" type="reset" (click)="onReset()">Cancelar</button>
+			</div>
+		</div>
+	</div>
 </div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+		  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		</div>
+		<div class="modal-body">
+		  ...
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+		  <button type="button" class="btn btn-primary">Save changes</button>
+		</div>
+	  </div>
+	</div>
+  </div>
